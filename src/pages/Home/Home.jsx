@@ -1,10 +1,8 @@
 import alimatha from "./alimatha.webp";
-import logo from "./logo.webp";
 import styles from "./Home.module.css";
 import bigLogo from "./big-logo.webp";
 import ContactForm from "../../components/ContactForm/ContactForm";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { isMobile } from "react-device-detect";
+import { Header } from "../../components/Header/Header";
 
 export const Home = () => {
   return (
@@ -14,23 +12,8 @@ export const Home = () => {
         className={styles.alimatha}
         alt="Alimatha drone shot"
       />
-      <div className={styles.banner}>
-        <img src={logo} className={styles.logo} alt="Logo" />
-        <div className={styles.nav}>
-          {isMobile ? (
-            <RxHamburgerMenu />
-          ) : (
-            <>
-              <span>
-                <a href="/resorts">Resorts</a>
-              </span>
-              <span>Guest Houses</span>
-              <span>Services</span>
-              <span>Contact Us</span>
-            </>
-          )}
-        </div>
-      </div>
+      <Header />
+
       <div className={styles.body}>
         <img src={bigLogo} className={styles.bigLogo} alt="Logo" />
         <p className={styles.embarkText}>

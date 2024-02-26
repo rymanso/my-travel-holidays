@@ -12,27 +12,6 @@
     object-position: 0 55%;
 }
 
-.banner {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    border-bottom: 1px solid rgb(210, 210, 210);
-    
-}
-
-.logo {
-    height: 200%;
-}
-
-.nav {
-    display: flex;
-    gap: 20px;
-    padding: 0 20px;
-    cursor: pointer;
-}
-
 .bigLogo {
     height: 300px;
     object-fit: scale-down;

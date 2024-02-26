@@ -4,6 +4,7 @@ import { ResortCard } from "../../components/ResortCard/ResortCard";
 import dhiggiri from "./dhiggiri.webp";
 import maayafushi from "./maayafushi.webp";
 import { isMobile } from "react-device-detect";
+import { Header } from "../../components/Header/Header";
 
 export const Resorts = () => {
   return (
@@ -12,6 +13,7 @@ export const Resorts = () => {
         <img src={resorts} className={styles.resorts} alt="Resort" />
         <p className={styles.title}>Resorts</p>
       </div>
+      <Header />
       <div
         className={styles.content}
         style={{ flexDirection: isMobile ? "column" : "row" }}
@@ -22,6 +24,7 @@ export const Resorts = () => {
           distance="65km from Male'"
           flight="25 mins by Seaplane"
           boat="90 mins by Speedboat"
+          linkTo="/nakai-alimatha"
         />
         <ResortCard
           src={dhiggiri}
@@ -29,6 +32,7 @@ export const Resorts = () => {
           distance="65km from Male'"
           flight="25 mins by Seaplane"
           boat="90 mins by Speedboat"
+          linkTo="/nakai-dhiggiri"
         />
         <ResortCard
           src={maayafushi}
@@ -36,6 +40,7 @@ export const Resorts = () => {
           distance="65km from Male'"
           flight="25 mins by Seaplane"
           boat="90 mins by Speedboat"
+          linkTo="/nakai-maayaafushi"
         />
       </div>
     </div>
