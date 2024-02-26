@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    position: relative;
+
+}
+
+.imgContainer{
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
+.resorts {
+    width: 100%;
+    object-fit: cover;
+    object-position: 0 35%;
+}
+
+.title {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 44px;
+}
+.content {
+    display: flex;
+    padding: 40px;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
