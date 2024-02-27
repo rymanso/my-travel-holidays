@@ -24,7 +24,7 @@ export const Resorts = () => {
           distance="65km from Male'"
           flight="25 mins by Seaplane"
           boat="90 mins by Speedboat"
-          linkTo="/nakai-alimatha"
+          linkTo="/resorts/nakai-alimatha"
         />
         <ResortCard
           src={dhiggiri}
@@ -32,7 +32,7 @@ export const Resorts = () => {
           distance="65km from Male'"
           flight="25 mins by Seaplane"
           boat="90 mins by Speedboat"
-          linkTo="/nakai-dhiggiri"
+          linkTo="/resorts/nakai-dhiggiri"
         />
         <ResortCard
           src={maayafushi}
@@ -40,7 +40,7 @@ export const Resorts = () => {
           distance="65km from Male'"
           flight="25 mins by Seaplane"
           boat="90 mins by Speedboat"
-          linkTo="/nakai-maayaafushi"
+          linkTo="/resorts/nakai-maayaafushi"
         />
       </div>
     </div>

@@ -20,3 +20,48 @@
     padding: 0 20px;
     cursor: pointer;
 }
+
+.nav a{
+    text-decoration: none;
+    color: black
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 0;
+    height: 100vh;
+    font-size: 22px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fefefe;
+    z-index: 1;
+    transition: width 100ms ease-out;
+    border-left: #c2c2c2 1px solid;
+}
+
+.sidebar.sidebarExpanded{
+    width: 150px;
+    padding: 20px
+}
+
+.sidebar a{
+    text-decoration: none;
+    color: black
+}
+
+.closeSidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 100%;
+}
+
+
+.closeSidebar svg {
+    max-width: 20px;
+    width: 100%;
+}

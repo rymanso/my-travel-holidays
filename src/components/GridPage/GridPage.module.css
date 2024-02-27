@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    padding: 30px;
+    font-size: 42px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 512px 512px;
+}
+
+.grid img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+
+}
+
+.gridTextBox {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.gridTextBoxTitle {
+    font-size: 36px;
+    padding: 20px;
+}
+
+.gridTextBoxText {
+    font-size: 16px;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 80%;
+    }
+  }
+  
