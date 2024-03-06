@@ -46,7 +46,7 @@ const ContactForm = () => {
       // Use emailjs to email contact form data
       await emailjs.send(
         "service_yzwus2e",
-        "template_67ee7ho",
+        "template_dalihd6",
         templateParams,
         "1b8Wjbzf5SKDTYHpH"
       );
