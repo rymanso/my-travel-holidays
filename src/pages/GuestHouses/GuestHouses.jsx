@@ -1,5 +1,5 @@
 import resorts from "../Resorts/resorts.webp";
-import dhiggiri from "../Resorts/dhiggiri.webp";
+import dhiggiri from "../Resorts/dhiggiri.jpeg";
 import football from "./football.webp";
 import styles from "./GuestHouses.module.css";
 import { isMobile } from "react-device-detect";

@@ -4,7 +4,7 @@ import {
 } from "../../../../components/GridPage/GridPage";
 import two from "./two.webp";
 import three from "./three.webp";
-import jetski from "../jetski.webp";
+import jetski from "../jetski.jpeg";
 
 export const DhiggiriRecreation = () => (
   <GridPage title="Recreation">

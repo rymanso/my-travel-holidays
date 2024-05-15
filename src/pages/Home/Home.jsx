@@ -1,4 +1,4 @@
-import alimatha from "./alimatha.webp";
+import alimatha from "./alimatha.jpeg";
 import styles from "./Home.module.css";
 import bigLogo from "./big-logo.webp";
 import ContactForm from "../../components/ContactForm/ContactForm";

@@ -1,9 +1,9 @@
 import { ImageCard } from "../../../components/ImageCard/ImageCard";
 import { ResortSummary } from "../../../components/ResortSummary/ResortSummary";
-import alima2 from "./alima2.webp";
-import accom from "./accom.webp";
-import dining from "./dining.webp";
-import tennis from "./tennis.webp";
+import alima2 from "./alima2.jpeg";
+import accom from "./accom.jpeg";
+import dining from "./dining.jpeg";
+import tennis from "./tennis.jpeg";
 import { Header } from "../../../components/Header/Header";
 export const AlimathaSummary = () => {
   return (

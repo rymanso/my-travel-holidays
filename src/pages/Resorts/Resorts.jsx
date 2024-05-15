@@ -1,7 +1,7 @@
 import resorts from "./resorts.webp";
 import styles from "./Resorts.module.css";
 import { ResortCard } from "../../components/ResortCard/ResortCard";
-import dhiggiri from "./dhiggiri.webp";
+import dhiggiri from "./dhiggiri.jpeg";
 import maayafushi from "./maayafushi.webp";
 import { isMobile } from "react-device-detect";
 import { Header } from "../../components/Header/Header";

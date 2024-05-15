@@ -1,9 +1,9 @@
 import { ImageCard } from "../../../components/ImageCard/ImageCard";
 import { ResortSummary } from "../../../components/ResortSummary/ResortSummary";
-import dhiggiri from "../dhiggiri.webp";
-import accom from "./accom.webp";
-import dining from "./dining.webp";
-import jetski from "./jetski.webp";
+import dhiggiri from "../dhiggiri.jpeg";
+import accom from "./accom.jpeg";
+import dining from "./dining.jpeg";
+import jetski from "./jetski.jpeg";
 import { Header } from "../../../components/Header/Header";
 
 export const DhiggiriSummary = () => {

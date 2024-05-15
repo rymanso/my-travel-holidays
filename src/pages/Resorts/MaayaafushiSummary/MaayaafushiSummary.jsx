@@ -3,7 +3,7 @@ import { ResortSummary } from "../../../components/ResortSummary/ResortSummary";
 import maayafushi from "../maayafushi.webp";
 import accom from "./accom.jpeg";
 import dining from "./dining.jpeg";
-import recre from "./recre.webp";
+import recre from "./recre.jpeg";
 import { Header } from "../../../components/Header/Header";
 
 export const MaayaafushiSummary = () => {
