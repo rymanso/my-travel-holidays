@@ -15,6 +15,10 @@ import { MaayaafushiDining } from "./pages/Resorts/MaayaafushiSummary/Dining/Din
 import { AlimathaRecreation } from "./pages/Resorts/AlimathaSummary/Recreation/Recreation";
 import { DhiggiriRecreation } from "./pages/Resorts/DhiggiriSummary/Recreation/Recreation";
 import { MaayaafushiRecreation } from "./pages/Resorts/MaayaafushiSummary/Recreation/Recreation";
+import { RitzCarltonSummary } from "./pages/Resorts/RitzCarltonSummary/RitzCarltonSummary";
+import { RitzCarltonAccomodation } from "./pages/Resorts/RitzCarltonSummary/Accomodation/Accomodation";
+import { RitzCarltonDining } from "./pages/Resorts/RitzCarltonSummary/Dining/Dining";
+import { RitzCarltonRecreation } from "./pages/Resorts/RitzCarltonSummary/Recreation/Recreation";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +76,22 @@ const router = createBrowserRouter([
   {
     path: "/resorts/nakai-maayaafushi/recreation",
     element: <MaayaafushiRecreation />,
+  },
+  {
+    path: "/resorts/ritz-carlton",
+    element: <RitzCarltonSummary />,
+  },
+  {
+    path: "/resorts/ritz-carlton/accomodation",
+    element: <RitzCarltonAccomodation />,
+  },
+  {
+    path: "/resorts/ritz-carlton/dining",
+    element: <RitzCarltonDining />,
+  },
+  {
+    path: "/resorts/ritz-carlton/recreation",
+    element: <RitzCarltonRecreation />,
   },
   {
     path: "/guest-houses",
