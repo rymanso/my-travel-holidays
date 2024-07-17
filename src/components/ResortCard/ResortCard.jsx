@@ -11,10 +11,12 @@ export const ResortCard = ({ src, resort, distance, flight, boat, linkTo }) => {
         <FaHouse />
         <p>{distance}</p>
       </div>
-      <div className={styles.detailItem}>
-        <FaPlane />
-        <p>{flight}</p>
-      </div>
+      {flight ? (
+        <div className={styles.detailItem}>
+          <FaPlane />
+          <p>{flight}</p>
+        </div>
+      ) : null}
       <div className={styles.detailItem}>
         <FaSailboat />
         <p>{boat}</p>

@@ -2,15 +2,8 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import logo from "./logo.webp";
 import { isMobile } from "react-device-detect";
-import { RxArrowRight, RxCross1, RxHamburgerMenu } from "react-icons/rx";
+import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
-import {
-  FaAngleRight,
-  FaCross,
-  FaCrosshairs,
-  FaRightFromBracket,
-  FaRightToBracket,
-} from "react-icons/fa6";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -34,7 +27,7 @@ export const Header = () => {
                 <a href="/resorts">Resorts</a>
               </span>
               <span>
-                <a href="/guest-houses">Guest Houses</a>
+                {/* <a href="/guest-houses">Guest Houses</a> */}
               </span>
               {/* <span>Services</span> */}
               <span>
@@ -53,7 +46,7 @@ export const Header = () => {
           <RxCross1 onClick={() => setExpandedSidebar(false)} />
         </div>
         <a href="/resorts">Resorts</a>
-        <a href="/guest-houses">Guest Houses</a>
+        {/* <a href="/guest-houses">Guest Houses</a> */}
         <a href="/">Contact Us</a>
       </div>
     </>

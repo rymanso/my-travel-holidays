@@ -3,6 +3,7 @@ import styles from "./Resorts.module.css";
 import { ResortCard } from "../../components/ResortCard/ResortCard";
 import dhiggiri from "./dhiggiri.jpeg";
 import maayafushi from "./maayafushi.webp";
+import ritz from "./ritz-carlton.jpg";
 import { isMobile } from "react-device-detect";
 import { Header } from "../../components/Header/Header";
 
@@ -41,6 +42,13 @@ export const Resorts = () => {
           flight="25 mins by Seaplane"
           boat="90 mins by Speedboat"
           linkTo="/resorts/nakai-maayaafushi"
+        />
+        <ResortCard
+          src={ritz}
+          resort="The Ritz-Carlton Maldives, Fari Islands"
+          distance="51km from Male'"
+          boat="45 mins by Speedboat"
+          linkTo="/resorts/ritz-carlton"
         />
       </div>
     </div>
