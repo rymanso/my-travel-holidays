@@ -20,7 +20,7 @@ export const AlimathaSummary = () => {
           src={accom}
           linkTo="/resorts/nakai-alimatha/accomodation"
         >
-          <ul style={{ lineHeight: 1.4 }}>
+          <ul style={{ lineHeight: 1.5 }}>
             <li>34 Over water bungalows</li>
             <li>98 Beach bungalows</li>
             <li>29 Garden bungalows</li>
@@ -32,7 +32,7 @@ export const AlimathaSummary = () => {
           src={dining}
           linkTo={"/resorts/nakai-alimatha/dining"}
         >
-          <ul style={{ lineHeight: 1.4 }}>
+          <ul style={{ lineHeight: 1.5 }}>
             <li>Main Restaurant</li>
             <li>Romantic Dinner</li>
             <li>Barabaru Cafe' </li>
@@ -45,14 +45,14 @@ export const AlimathaSummary = () => {
           src={tennis}
           linkTo={"/resorts/nakai-alimatha/recreation"}
         >
-          <ul style={{ lineHeight: 1.4 }}>
+          <ul style={{ lineHeight: 1.5 }}>
             <li>Water Sports</li>
             <li>Scuba Diving</li>
             <li>Beach Volley </li>
             <li>Aqua Gym</li>
             <li>Tennis</li>
           </ul>
-          <ul style={{ lineHeight: 1.4 }}>
+          <ul style={{ lineHeight: 1.5 }}>
             <li>Gym</li>
             <li>Football</li>
             <li>Bocce </li>

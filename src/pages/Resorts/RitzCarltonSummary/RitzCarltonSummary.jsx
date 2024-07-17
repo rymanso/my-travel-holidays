@@ -1,59 +1,83 @@
 import { ImageCard } from "../../../components/ImageCard/ImageCard";
 import { ResortSummary } from "../../../components/ResortSummary/ResortSummary";
-import maayafushi from "../maayafushi.webp";
+import ritz from "../ritz-carlton.jpg";
 import accom from "./accom.jpeg";
 import dining from "./dining.jpeg";
 import recre from "./recre.jpeg";
 import { Header } from "../../../components/Header/Header";
 
 export const RitzCarltonSummary = () => {
+  const cardDescriptionStyle = {
+    padding: "10px",
+    fontSize: "14px",
+    fontFamily: "Bacasime Antique",
+  };
   return (
     <>
       <Header />
       <ResortSummary
-        resortName="Nakai RitzCarlton"
-        slogan="Where the beauty reveals itself"
-        src={maayafushi}
-        description="Located in the Alif Alif atoll, Maayafushi has all the peculiarities that make this place unique: a wild vegetation and a seabed populated by many species of fish. Largely renovatedduring 2021, Maayafushi looks more beautiful than ever and is ready to make everyone fall in love once again"
+        resortName="The Ritz-Carlton"
+        slogan="Maldives, Fari Islands"
+        src={ritz}
+        description="The Ritz-Carlton Maldives, Fari Islands welcomes you to
+        embrace island life as sounds of the boduberu drum beat
+        against a breath-taking Maldivian sunset as the island transitions
+        from a day filled with memorable moments into an evening of
+        serenity and reflection.
+        <br/><br/>
+        Designing The Ritz-Carlton Maldives, Fari Islands encompassed more than architecture, art and décor; above all, it was
+        created with respect for the area’s fragile ecosystem. Before breaking ground on an existing sandbank, marine experts
+        extensively studied the oceanographic conditions to ensure minimal impact on the coral reef and spawning.
+        Construction materials were carefully sourced to favor prefabricated materials, which reduced the need for cutting and heavy
+        machinery, and PEFC-certified timber was brought from sustainable forests in Europe, allowing us to earn PEFC Project
+        Certification. The resort’s developers achieved EDGE certification in building the resort, which led to the Maldives’ first green
+        loan."
       >
         <ImageCard
           title="Accomodation"
           src={accom}
-          linkTo={"/resorts/nakai-RitzCarlton/accomodation"}
+          linkTo={"/resorts/ritz-carlton/accomodation"}
         >
-          <ul style={{ lineHeight: 1.4 }}>
-            <li>34 Over Water Bungalows</li>
-            <li>27 Beach Bungalows</li>
-            <li>1 Garden Villa</li>
-            <li>3 Suites</li>
-          </ul>
+          <div style={cardDescriptionStyle}>
+            Presenting 100 elegantly-designed villas by globally renowned Kerry
+            Hill Architects. <br />
+            <br />
+            The legendary Ritz-Carlton service is refined by a distinguished
+            Aris Meeha for each villa.
+          </div>
         </ImageCard>
         <ImageCard
-          title="Dining & Bar"
+          title="Dining by Design"
           src={dining}
-          linkTo={"/resorts/nakai-RitzCarlton/dining"}
+          linkTo={"/resorts/ritz-carlton/dining"}
         >
-          <ul style={{ lineHeight: 1.4 }}>
-            <li>Over Water Restaurant</li>
-            <li>Sand Restaurant</li>
-            <li>Main Bar</li>
+          <ul style={{ lineHeight: 1.5, marginLeft: "-20px" }}>
+            <li>Cinema Under The Stars</li>
+            <li> Mystique Garden</li>
+            <li>Grand Sunset Beach</li>
+          </ul>
+
+          <ul style={{ lineHeight: 1.5, marginLeft: "-20px" }}>
+            <li>Beach Cove</li>
+            <li>Sandbank</li>
           </ul>
         </ImageCard>
         <ImageCard
           title="Recreation"
           src={recre}
-          linkTo={"/resorts/nakai-RitzCarlton/recreation"}
+          linkTo={"/resorts/ritz-carlton/recreation"}
         >
-          <ul style={{ lineHeight: 1.4 }}>
-            <li>Water Sports</li>
-            <li>Scuba Diving</li>
-            <li>Beach Volley </li>
-            <li>Aqua Gym</li>
+          <ul style={{ lineHeight: 1.5, marginLeft: "-20px" }}>
+            <li>Tennis Academy</li>
+            <li>Fitness Classes</li>
+            <li>Watersports</li>
+            <li>Yoga</li>
           </ul>
-          <ul style={{ lineHeight: 1.4 }}>
-            <li>Gym</li>
-            <li>Bocce </li>
-            <li>Ping-Pong</li>
+          <ul style={{ lineHeight: 1.5, marginLeft: "-20px" }}>
+            <li>Spa</li>
+            <li>Marine Biology</li>
+            <li>Drone Photography </li>
+            <li>Snorkelling and Diving</li>
           </ul>
         </ImageCard>
       </ResortSummary>

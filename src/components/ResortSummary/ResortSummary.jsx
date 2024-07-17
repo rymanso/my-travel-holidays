@@ -15,7 +15,10 @@ export const ResortSummary = ({
       <div className={styles.imgContainer}>
         <img src={src} className={styles.bigImg} alt="Resort" />
       </div>
-      <p className={styles.description}>{description}</p>
+      <p
+        className={styles.description}
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
       <div
         className={styles.content}
         style={{ flexDirection: isMobile ? "column" : "row" }}

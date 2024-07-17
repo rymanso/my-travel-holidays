@@ -21,7 +21,7 @@ export const DhiggiriSummary = () => {
           src={accom}
           linkTo="/resorts/nakai-dhiggiri/accomodation"
         >
-          <ul style={{ lineHeight: 1.4 }}>
+          <ul style={{ lineHeight: 1.5 }}>
             <li>34 Over Water Bungalows</li>
             <li>27 Beach Bungalows</li>
             <li>1 Garden Villa</li>
@@ -33,7 +33,7 @@ export const DhiggiriSummary = () => {
           src={dining}
           linkTo={"/resorts/nakai-dhiggiri/dining"}
         >
-          <ul style={{ lineHeight: 1.4 }}>
+          <ul style={{ lineHeight: 1.5 }}>
             <li>Over Water Restaurant</li>
             <li>Sand Restaurant</li>
             <li>Main Bar</li>
@@ -44,13 +44,13 @@ export const DhiggiriSummary = () => {
           src={jetski}
           linkTo={"/resorts/nakai-dhiggiri/recreation"}
         >
-          <ul style={{ lineHeight: 1.4 }}>
+          <ul style={{ lineHeight: 1.5 }}>
             <li>Water Sports</li>
             <li>Scuba Diving</li>
             <li>Beach Volley </li>
             <li>Aqua Gym</li>
           </ul>
-          <ul style={{ lineHeight: 1.4 }}>
+          <ul style={{ lineHeight: 1.5 }}>
             <li>Gym</li>
             <li>Bocce </li>
             <li>Ping-Pong</li>
