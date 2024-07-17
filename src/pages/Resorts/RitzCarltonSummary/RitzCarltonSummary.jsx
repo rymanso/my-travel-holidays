@@ -19,7 +19,7 @@ export const RitzCarltonSummary = () => {
         <ImageCard
           title="Accomodation"
           src={accom}
-          linkTo={"/resorts/nakai-RitzCarlton/accomodation"}
+          linkTo={"/resorts/ritz-carlton/accomodation"}
         >
           <ul style={{ lineHeight: 1.4 }}>
             <li>34 Over Water Bungalows</li>
@@ -31,7 +31,7 @@ export const RitzCarltonSummary = () => {
         <ImageCard
           title="Dining & Bar"
           src={dining}
-          linkTo={"/resorts/nakai-RitzCarlton/dining"}
+          linkTo={"/resorts/ritz-carlton/dining"}
         >
           <ul style={{ lineHeight: 1.4 }}>
             <li>Over Water Restaurant</li>
@@ -42,7 +42,7 @@ export const RitzCarltonSummary = () => {
         <ImageCard
           title="Recreation"
           src={recre}
-          linkTo={"/resorts/nakai-RitzCarlton/recreation"}
+          linkTo={"/resorts/ritz-carlton/recreation"}
         >
           <ul style={{ lineHeight: 1.4 }}>
             <li>Water Sports</li>
