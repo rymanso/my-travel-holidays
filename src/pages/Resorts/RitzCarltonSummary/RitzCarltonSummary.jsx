@@ -71,12 +71,10 @@ export const RitzCarltonSummary = () => {
             <li>Tennis Academy</li>
             <li>Fitness Classes</li>
             <li>Watersports</li>
-            <li>Yoga</li>
           </ul>
           <ul style={{ lineHeight: 1.5, marginLeft: "-20px" }}>
             <li>Spa</li>
-            <li>Marine Biology</li>
-            <li>Drone Photography </li>
+            <li>Yoga</li>
             <li>Snorkelling and Diving</li>
           </ul>
         </ImageCard>
