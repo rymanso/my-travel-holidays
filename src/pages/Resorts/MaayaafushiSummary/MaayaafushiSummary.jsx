@@ -14,7 +14,7 @@ export const MaayaafushiSummary = () => {
         resortName="Nakai Maayaafushi"
         slogan="Where the beauty reveals itself"
         src={maayafushi}
-        description="Located in the Alif Alif atoll, Maayafushi has all the peculiarities that make this place unique: a wild vegetation and a seabed populated by many species of fish. Largely renovatedduring 2021, Maayafushi looks more beautiful than ever and is ready to make everyone fall in love once again"
+        description="Located in the Alif Alif atoll, Maayafushi has all the peculiarities that make this place unique: a wild vegetation and a seabed populated by many species of fish. Largely renovated during 2021, Maayafushi looks more beautiful than ever and is ready to make everyone fall in love once again"
       >
         <ImageCard
           title="Accomodation"
