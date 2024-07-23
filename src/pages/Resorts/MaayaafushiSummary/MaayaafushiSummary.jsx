@@ -14,14 +14,14 @@ export const MaayaafushiSummary = () => {
         resortName="Nakai Maayaafushi"
         slogan="Where the beauty reveals itself"
         src={maayafushi}
-        description="Located in the Alif Alif atoll, Maayafushi has all the peculiarities that make this place unique: a wild vegetation and a seabed populated by many species of fish. Largely renovatedduring 2021, Maayafushi looks more beautiful than ever and is ready to make everyone fall in love once again"
+        description="Located in the Alif Alif atoll, Maayafushi has all the peculiarities that make this place unique: a wild vegetation and a seabed populated by many species of fish. Largely renovated during 2021, Maayafushi looks more beautiful than ever and is ready to make everyone fall in love once again"
       >
         <ImageCard
           title="Accomodation"
           src={accom}
           linkTo={"/resorts/nakai-maayaafushi/accomodation"}
         >
-          <ul style={{ lineHeight: 1.4 }}>
+          <ul style={{ lineHeight: 1.5 }}>
             <li>34 Over Water Bungalows</li>
             <li>27 Beach Bungalows</li>
             <li>1 Garden Villa</li>
@@ -33,7 +33,7 @@ export const MaayaafushiSummary = () => {
           src={dining}
           linkTo={"/resorts/nakai-maayaafushi/dining"}
         >
-          <ul style={{ lineHeight: 1.4 }}>
+          <ul style={{ lineHeight: 1.5 }}>
             <li>Over Water Restaurant</li>
             <li>Sand Restaurant</li>
             <li>Main Bar</li>
@@ -44,13 +44,13 @@ export const MaayaafushiSummary = () => {
           src={recre}
           linkTo={"/resorts/nakai-maayaafushi/recreation"}
         >
-          <ul style={{ lineHeight: 1.4 }}>
+          <ul style={{ lineHeight: 1.5 }}>
             <li>Water Sports</li>
             <li>Scuba Diving</li>
             <li>Beach Volley </li>
             <li>Aqua Gym</li>
           </ul>
-          <ul style={{ lineHeight: 1.4 }}>
+          <ul style={{ lineHeight: 1.5 }}>
             <li>Gym</li>
             <li>Bocce </li>
             <li>Ping-Pong</li>

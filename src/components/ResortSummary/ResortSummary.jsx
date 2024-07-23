@@ -30,7 +30,10 @@ export const ResortSummary = ({
           </div>
         ))}
       </Carousel>
-      <p className={styles.description}>{description}</p>
+      <p
+        className={styles.description}
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
       <div
         className={styles.content}
         style={{ flexDirection: isMobile ? "column" : "row" }}
