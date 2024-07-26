@@ -6,6 +6,10 @@ import dining from "./dining.jpeg";
 import recre from "./recre.jpeg";
 import { Header } from "../../../components/Header/Header";
 
+const slideImages = [
+  { url: ritz, caption: 'resort' },
+];
+
 export const RitzCarltonSummary = () => {
   const cardDescriptionStyle = {
     padding: "10px",
@@ -18,7 +22,7 @@ export const RitzCarltonSummary = () => {
       <ResortSummary
         resortName="The Ritz-Carlton"
         slogan="Maldives, Fari Islands"
-        src={ritz}
+        slideImages={slideImages}
         description="The Ritz-Carlton Maldives, Fari Islands welcomes you to
         embrace island life as sounds of the boduberu drum beat
         against a breath-taking Maldivian sunset as the island transitions
