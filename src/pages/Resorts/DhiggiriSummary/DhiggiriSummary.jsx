@@ -6,6 +6,10 @@ import dining from "./dining.jpeg";
 import jetski from "./jetski.jpeg";
 import { Header } from "../../../components/Header/Header";
 
+const slideImages = [
+  { url: dhiggiri, caption: 'resort' },
+];
+
 export const DhiggiriSummary = () => {
   return (
     <>
@@ -13,7 +17,7 @@ export const DhiggiriSummary = () => {
       <ResortSummary
         resortName="Nakai Dhiggiri"
         slogan="Dive in to the silence and get inspired."
-        src={dhiggiri}
+        slideImages={slideImages}
         description="Here, love and respect for the environment are accompanied by aunique atmosphere where tranquility and silence envelope everything and become the setting for a unique experience."
       >
         <ImageCard

@@ -6,8 +6,9 @@ import dining from "./dining.jpeg";
 import tennis from "./tennis.jpeg";
 import { Header } from "../../../components/Header/Header";
 
+const id = "1Xf4g9deCZY48nxynsSe4EEueuYingXK1"
 const slideImages = [
-  { url: "https://drive.google.com/thumbnail?id=1Xf4g9deCZY48nxynsSe4EEueuYingXK1&sz=w1500", caption: 'Alimatha View' },
+  { url: `https://drive.google.com/thumbnail?id=${id}&sz=w1500`, caption: 'Alimatha View' },
   { url: accom, caption: 'Accommodation' },
   { url: dining, caption: 'Dining & Bar' },
   { url: tennis, caption: 'Recreation' }
