@@ -1,10 +1,11 @@
 import { ImageCard } from "../../../components/ImageCard/ImageCard";
 import { ResortSummary } from "../../../components/ResortSummary/ResortSummary";
-import dhiggiri from "../dhiggiri.jpeg";
 import accom from "./accom.jpeg";
 import dining from "./dining.jpeg";
 import jetski from "./jetski.jpeg";
 import { Header } from "../../../components/Header/Header";
+import { getSlideImages } from "./imgUrls";
+import { isMobile } from "react-device-detect";
 
 export const DhiggiriSummary = () => {
   return (
@@ -13,7 +14,7 @@ export const DhiggiriSummary = () => {
       <ResortSummary
         resortName="Nakai Dhiggiri"
         slogan="Dive in to the silence and get inspired."
-        src={dhiggiri}
+        slideImages={getSlideImages(isMobile ? "400" : "800")}
         description="Here, love and respect for the environment are accompanied by aunique atmosphere where tranquility and silence envelope everything and become the setting for a unique experience."
       >
         <ImageCard

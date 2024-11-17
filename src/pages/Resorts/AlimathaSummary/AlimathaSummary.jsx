@@ -1,10 +1,12 @@
 import { ImageCard } from "../../../components/ImageCard/ImageCard";
 import { ResortSummary } from "../../../components/ResortSummary/ResortSummary";
-import alima2 from "./alima2.jpeg";
 import accom from "./accom.jpeg";
 import dining from "./dining.jpeg";
 import tennis from "./tennis.jpeg";
 import { Header } from "../../../components/Header/Header";
+import { getSlideImages } from "./imgUrls";
+import { isMobile } from "react-device-detect";
+
 export const AlimathaSummary = () => {
   return (
     <>
@@ -12,7 +14,7 @@ export const AlimathaSummary = () => {
       <ResortSummary
         resortName="Nakai Alimatha"
         slogan="Barefoot in Paradise"
-        src={alima2}
+        slideImages={getSlideImages(isMobile ? "400" : "800")}
         description="Located in the Vaavu Atoll, one of the most pristine sites in the Maldives. Alimathà embodies the soul of the NAKAI group. Recently renovated, it is now more beautiful and greener than ever. Brand new for 2021 are a 550 square meter swimming pool and the installation of the Maldives' first Padel Tennis court."
       >
         <ImageCard

@@ -1,10 +1,11 @@
 import { ImageCard } from "../../../components/ImageCard/ImageCard";
 import { ResortSummary } from "../../../components/ResortSummary/ResortSummary";
-import maayafushi from "../maayafushi.webp";
 import accom from "./accom.jpeg";
 import dining from "./dining.jpeg";
 import recre from "./recre.jpeg";
 import { Header } from "../../../components/Header/Header";
+import { getSlideImages } from "./imgUrls";
+import { isMobile } from "react-device-detect";
 
 export const MaayaafushiSummary = () => {
   return (
@@ -13,7 +14,7 @@ export const MaayaafushiSummary = () => {
       <ResortSummary
         resortName="Nakai Maayaafushi"
         slogan="Where the beauty reveals itself"
-        src={maayafushi}
+        slideImages={getSlideImages(isMobile ? "400" : "800")}
         description="Located in the Alif Alif atoll, Maayafushi has all the peculiarities that make this place unique: a wild vegetation and a seabed populated by many species of fish. Largely renovated during 2021, Maayafushi looks more beautiful than ever and is ready to make everyone fall in love once again"
       >
         <ImageCard

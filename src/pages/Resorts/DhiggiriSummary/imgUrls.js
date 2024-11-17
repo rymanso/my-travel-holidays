@@ -1,0 +1,35 @@
+const imageIds = [
+  "1Db7QgKQ5NxA6SsLFpef6-hXqls8TK4eL",
+  "1vqx0NhihHAQXYYw_I0uhntPODDu2M0q3",
+  "15HBQT0LE9E7ohKzu_cQFNl9VN_YsWVuL",
+  "10b2xjDXjO11qYmE2o0hVbwruawKgGOwZ",
+  "1WgZ56lXTYmUBfEhDudTxjW2UpYdRCtMW",
+  "1rmnDHXRU2XaVuMKc6vel-foeM0zX1EGC",
+  "19jGUvhh7juJEKLHWt3GmdsQDN3Jl6xoC",
+  "167GEsCPEooj-zd-1WnNK0D1ogiU_Yzev",
+  "1zPZnggWrvGj31hmS57rpGJTHTTWt__st",
+  "1qoKX6ayrjeCYPp7r-s6GifSt-UiKtHX_",
+  "1WkIsxT322sJcehlh-RVFg4bjwR6-PJHV",
+  "1OnoIjiOQXyilWXhBOh3nPTJ09_SauJWv",
+  "10rxnk4qlHxsCUKJWutzMzX-Pld8iFZM0",
+  "1IRsMs6RuoLUf3-R21jnBBJO1tNq22aqK",
+  "1oUQVE6LZ9DEk3WPGTypSi-C3lb8rk8Qo",
+  "1rvCFc7udGw3lQA8v7zQNEUX_ocBcV0o0",
+  "1aae_CnzrhEkQ2Yxy_mHU0-WpI501SUti",
+  "1Tx4i89PTada_IniF5efYBDO_UVjmoQxw",
+  "1QJCyAYBLn4v-bXut3ATgSyR4haOInefP",
+  "1NJXD4GA2sdPKePaFdeocxDXWJtbI6U6i",
+  "1bdQeMy0AoI4mu8A0kRgY-7hjqdRx-Nd_",
+  "1msUb91-ItEFbsj2e-52xF7z_OlcnuX4q",
+  "1_JnDafBOASLVxokijYKZevDVDjcSotal",
+  "1ZQZMgKJ2mYB0IsOBO5JaeePACdAJApaN",
+  "15b-Wu-8FOQxscaFvIB-j9ipWJFjKaNZ8",
+  "1HUp6M0evBxM3N8EDL-3eHTE5_K_oWg1W",
+  "1jkhDtxqRt2pRjDaIHixK0v9wNXjfOZSH",
+];
+
+export const getSlideImages = (width) =>
+  imageIds.map((id) => ({
+    url: `https://drive.google.com/thumbnail?id=${id}&sz=w${width}`,
+    caption: undefined,
+  }));
