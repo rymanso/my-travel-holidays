@@ -86,6 +86,6 @@ const imageIds = [
 
 export const getSlideImages = (width) =>
   imageIds.map((id) => ({
-    url: `https://drive.google.com/thumbnail?id=${id}&sz=w800`,
+    url: `https://drive.google.com/thumbnail?id=${id}&sz=w${width}`,
     caption: undefined,
   }));

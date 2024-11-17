@@ -17,7 +17,7 @@ export const ResortSummary = ({
       <div className={styles.carouselWrapper}>
         <Carousel
           showThumbs={false}
-          showArrows={true}
+          showArrows={false}
           stopOnHover={false}
           animationHandler="fade"
           swipeable={false}
