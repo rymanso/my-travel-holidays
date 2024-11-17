@@ -1,14 +1,11 @@
 import { ImageCard } from "../../../components/ImageCard/ImageCard";
 import { ResortSummary } from "../../../components/ResortSummary/ResortSummary";
-import ritz from "../ritz-carlton.jpg";
 import accom from "./accom.jpeg";
 import dining from "./dining.jpeg";
 import recre from "./recre.jpeg";
 import { Header } from "../../../components/Header/Header";
-
-const slideImages = [
-  { url: ritz, caption: 'resort' },
-];
+import { getSlideImages } from "./imgUrls";
+import { isMobile } from "react-device-detect";
 
 export const RitzCarltonSummary = () => {
   const cardDescriptionStyle = {
@@ -22,7 +19,7 @@ export const RitzCarltonSummary = () => {
       <ResortSummary
         resortName="The Ritz-Carlton"
         slogan="Maldives, Fari Islands"
-        slideImages={slideImages}
+        slideImages={getSlideImages(isMobile ? "400" : "800")}
         description="The Ritz-Carlton Maldives, Fari Islands welcomes you to
         embrace island life as sounds of the boduberu drum beat
         against a breath-taking Maldivian sunset as the island transitions
