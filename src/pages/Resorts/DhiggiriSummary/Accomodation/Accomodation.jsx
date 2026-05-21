@@ -8,7 +8,16 @@ import three from "./three.webp";
 import four from "./four.webp";
 
 export const DhiggiriAccomodation = () => (
-  <GridPage title="Accomodation">
+  <GridPage
+    title="Accomodation"
+    eyebrow="Nakai Dhiggiri"
+    breadcrumbs={[
+      { label: "Home", to: "/" },
+      { label: "Resorts", to: "/resorts" },
+      { label: "Nakai Dhiggiri", to: "/resorts/nakai-dhiggiri" },
+      { label: "Accomodation" },
+    ]}
+  >
     <img src={one} alt="over-water-suite" />
     <GridTextBox title="Suite">
       Facing the ocean, the Suites are quiet, spacious and cozy. The perfect

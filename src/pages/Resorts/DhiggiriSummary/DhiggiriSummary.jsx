@@ -10,51 +10,53 @@ import { isMobile } from "react-device-detect";
 export const DhiggiriSummary = () => {
   return (
     <>
-      <Header />
+      <Header transparent />
       <ResortSummary
         resortName="Nakai Dhiggiri"
-        slogan="Dive in to the silence and get inspired."
+        slogan="Dive into the silence and get inspired."
         slideImages={getSlideImages(isMobile ? "400" : "800")}
-        description="Here, love and respect for the environment are accompanied by aunique atmosphere where tranquility and silence envelope everything and become the setting for a unique experience."
+        breadcrumbs={[
+          { label: "Home", to: "/" },
+          { label: "Resorts", to: "/resorts" },
+          { label: "Nakai Dhiggiri" },
+        ]}
+        description="Here, love and respect for the environment are accompanied by a unique atmosphere where tranquility and silence envelope everything — and become the setting for a unique experience."
       >
         <ImageCard
           title="Accomodation"
+          eyebrow="Stays"
           src={accom}
           linkTo="/resorts/nakai-dhiggiri/accomodation"
         >
-          <ul style={{ lineHeight: 1.5 }}>
-            <li>34 Over Water Bungalows</li>
-            <li>27 Beach Bungalows</li>
-            <li>1 Garden Villa</li>
-            <li>3 Suites</li>
+          <ul>
+            <li>34 over-water bungalows</li>
+            <li>27 beach bungalows</li>
+            <li>1 garden villa</li>
+            <li>3 suites</li>
           </ul>
         </ImageCard>
         <ImageCard
-          title="Dining & Bar"
+          title="Dining &amp; Bar"
+          eyebrow="Taste"
           src={dining}
-          linkTo={"/resorts/nakai-dhiggiri/dining"}
+          linkTo="/resorts/nakai-dhiggiri/dining"
         >
-          <ul style={{ lineHeight: 1.5 }}>
-            <li>Over Water Restaurant</li>
-            <li>Sand Restaurant</li>
-            <li>Main Bar</li>
+          <ul>
+            <li>Over-water restaurant</li>
+            <li>Sand restaurant</li>
+            <li>Main bar</li>
           </ul>
         </ImageCard>
         <ImageCard
           title="Recreation"
+          eyebrow="Activities"
           src={jetski}
-          linkTo={"/resorts/nakai-dhiggiri/recreation"}
+          linkTo="/resorts/nakai-dhiggiri/recreation"
         >
-          <ul style={{ lineHeight: 1.5 }}>
-            <li>Water Sports</li>
-            <li>Scuba Diving</li>
-            <li>Beach Volley </li>
-            <li>Aqua Gym</li>
-          </ul>
-          <ul style={{ lineHeight: 1.5 }}>
-            <li>Gym</li>
-            <li>Bocce </li>
-            <li>Ping-Pong</li>
+          <ul>
+            <li>Water sports &amp; scuba diving</li>
+            <li>Beach volley &amp; aqua gym</li>
+            <li>Gym, bocce &amp; ping-pong</li>
           </ul>
         </ImageCard>
       </ResortSummary>

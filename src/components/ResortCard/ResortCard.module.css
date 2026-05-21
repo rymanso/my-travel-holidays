@@ -1,7 +1,22 @@
-.detailItem {
+.facts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    gap: 8px;
 }
 
+.fact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--c-muted);
+}
+
+.icon {
+    color: var(--c-deep);
+    font-size: 14px;
+    flex-shrink: 0;
+}

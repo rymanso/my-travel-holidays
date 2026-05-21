@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
-import "./ContactForm.css";
+import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
   const {
@@ -11,168 +11,121 @@ const ContactForm = () => {
     formState: { errors },
   } = useForm();
   const [disabled, setDisabled] = useState(false);
-  const [alertInfo, setAlertInfo] = useState({
-    display: false,
-    message: "",
-    type: "",
-  });
+  const [alertInfo, setAlertInfo] = useState({ display: false, message: "", type: "" });
 
-  // Shows alert message for form submission feedback
   const toggleAlert = (message, type) => {
     setAlertInfo({ display: true, message, type });
-
-    // Hide alert after 5 seconds
     setTimeout(() => {
       setAlertInfo({ display: false, message: "", type: "" });
     }, 5000);
   };
 
-  // Function called on submit that uses emailjs to send email of valid contact form
   const onSubmit = async (data) => {
-    // Destrcture data object
     const { name, email, subject, message } = data;
     try {
-      // Disable form while processing submission
       setDisabled(true);
-
-      // Define template params
-      const templateParams = {
-        name,
-        email,
-        subject,
-        message,
-      };
-
-      // Use emailjs to email contact form data
       await emailjs.send(
         "service_yzwus2e",
         "template_dalihd6",
-        templateParams,
+        { name, email, subject, message },
         "1b8Wjbzf5SKDTYHpH"
       );
-
-      // Display success alert
-      toggleAlert("Form submission was successful!", "success");
+      toggleAlert("Thank you — your message is on its way.", "success");
+      reset();
     } catch (e) {
       console.error(e);
-      // Display error alert
-      toggleAlert("Uh oh. Something went wrong.", "danger");
+      toggleAlert("Something went wrong. Please try again.", "danger");
     } finally {
-      // Re-enable form submission
       setDisabled(false);
-      // Reset contact form fields after submission
-      reset();
     }
   };
 
   return (
-    <div className="ContactForm">
-      <div className="container">
-        <div className="contactForm">
-          <form id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
-            {/* Row 1 of form */}
-            <p className="contact">Contact</p>
-            <div className="row formRow">
-              <input
-                type="text"
-                name="name"
-                {...register("name", {
-                  required: {
-                    value: true,
-                    message: "Please enter your name",
-                  },
-                  maxLength: {
-                    value: 30,
-                    message: "Please use 30 characters or less",
-                  },
-                })}
-                className="form-control formInput"
-                placeholder="Name"
-              ></input>
-              {errors.name && (
-                <span className="errorMessage">{errors.name.message}</span>
-              )}
+    <div className={styles.contact}>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
+        <div className={styles.row}>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="cf-name">Name</label>
+            <input
+              id="cf-name"
+              type="text"
+              className={`${styles.input} ${errors.name ? styles.inputError : ""}`}
+              placeholder="Your name"
+              aria-invalid={errors.name ? "true" : "false"}
+              {...register("name", {
+                required: "Please enter your name",
+                maxLength: { value: 30, message: "Please use 30 characters or less" },
+              })}
+            />
+            {errors.name && <span className={styles.error}>{errors.name.message}</span>}
+          </div>
 
-              <input
-                type="text"
-                name="subject"
-                {...register("subject", {
-                  required: {
-                    value: true,
-                    message: "Please enter a subject",
-                  },
-                  maxLength: {
-                    value: 75,
-                    message: "Subject cannot exceed 75 characters",
-                  },
-                })}
-                className="form-control formInput"
-                placeholder="Subject"
-              ></input>
-              {errors.subject && (
-                <span className="errorMessage">{errors.subject.message}</span>
-              )}
-            </div>
-            {/* Row 2 of form */}
-            <div className="row formRow">
-              <input
-                type="email"
-                name="email"
-                {...register("email", {
-                  required: true,
-                  pattern:
-                    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                })}
-                className="form-control formInput"
-                placeholder="Email address"
-              ></input>
-              {errors.email && (
-                <span className="errorMessage">
-                  Please enter a valid email address
-                </span>
-              )}
-            </div>
-            {/* Row 3 of form */}
-            <div className="row formRow">
-              <textarea
-                rows={3}
-                name="message"
-                {...register("message", {
-                  required: true,
-                })}
-                className="form-control formInput"
-                placeholder="Message"
-              ></textarea>
-              {errors.message && (
-                <span className="errorMessage">Please enter a message</span>
-              )}
-            </div>
-
-            <button
-              className="submit-btn btn btn-primary"
-              disabled={disabled}
-              type="submit"
-            >
-              Submit
-            </button>
-          </form>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="cf-subject">Subject</label>
+            <input
+              id="cf-subject"
+              type="text"
+              className={`${styles.input} ${errors.subject ? styles.inputError : ""}`}
+              placeholder="What's it about?"
+              aria-invalid={errors.subject ? "true" : "false"}
+              {...register("subject", {
+                required: "Please enter a subject",
+                maxLength: { value: 75, message: "Max 75 characters" },
+              })}
+            />
+            {errors.subject && <span className={styles.error}>{errors.subject.message}</span>}
+          </div>
         </div>
-      </div>
+
+        <div className={styles.field}>
+          <label className={styles.label} htmlFor="cf-email">Email</label>
+          <input
+            id="cf-email"
+            type="email"
+            className={`${styles.input} ${errors.email ? styles.inputError : ""}`}
+            placeholder="you@example.com"
+            aria-invalid={errors.email ? "true" : "false"}
+            {...register("email", {
+              required: true,
+              pattern:
+                /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+            })}
+          />
+          {errors.email && (
+            <span className={styles.error}>Please enter a valid email address</span>
+          )}
+        </div>
+
+        <div className={styles.field}>
+          <label className={styles.label} htmlFor="cf-message">Message</label>
+          <textarea
+            id="cf-message"
+            rows={4}
+            className={`${styles.input} ${styles.textarea} ${errors.message ? styles.inputError : ""}`}
+            placeholder="Where would you like to go, when, and with whom?"
+            aria-invalid={errors.message ? "true" : "false"}
+            {...register("message", { required: true })}
+          />
+          {errors.message && <span className={styles.error}>Please enter a message</span>}
+        </div>
+
+        <button
+          className={styles.submit}
+          disabled={disabled}
+          type="submit"
+        >
+          {disabled ? "Sending…" : "Send message"}
+        </button>
+      </form>
+
       {alertInfo.display && (
         <div
-          className={`alert alert-${alertInfo.type} alert-dismissible mt-5`}
-          role="alert"
+          className={`${styles.alert} ${
+            alertInfo.type === "success" ? styles.alertSuccess : styles.alertError
+          }`}
+          role="status"
         >
           {alertInfo.message}
-          <button
-            type="button"
-            className="btn-close"
-            data-bs-dismiss="alert"
-            aria-label="Close"
-            onClick={() =>
-              setAlertInfo({ display: false, message: "", type: "" })
-            } // Clear the alert when close button is clicked
-          ></button>
         </div>
       )}
     </div>

@@ -1,26 +1,26 @@
 import styles from "./ResortCard.module.css";
-import { FaHouse } from "react-icons/fa6";
-import { FaPlane } from "react-icons/fa6";
-import { FaSailboat } from "react-icons/fa6";
+import { FaLocationDot, FaPlane, FaSailboat } from "react-icons/fa6";
 import { ImageCard } from "../ImageCard/ImageCard";
 
-export const ResortCard = ({ src, resort, distance, flight, boat, linkTo }) => {
+export const ResortCard = ({ src, resort, distance, flight, boat, linkTo, eyebrow = "Resort" }) => {
   return (
-    <ImageCard src={src} title={resort} linkTo={linkTo}>
-      <div className={styles.detailItem}>
-        <FaHouse />
-        <p>{distance}</p>
-      </div>
-      {flight ? (
-        <div className={styles.detailItem}>
-          <FaPlane />
-          <p>{flight}</p>
-        </div>
-      ) : null}
-      <div className={styles.detailItem}>
-        <FaSailboat />
-        <p>{boat}</p>
-      </div>
+    <ImageCard src={src} title={resort} eyebrow={eyebrow} linkTo={linkTo}>
+      <ul className={styles.facts}>
+        <li className={styles.fact}>
+          <FaLocationDot className={styles.icon} aria-hidden />
+          <span>{distance}</span>
+        </li>
+        {flight ? (
+          <li className={styles.fact}>
+            <FaPlane className={styles.icon} aria-hidden />
+            <span>{flight}</span>
+          </li>
+        ) : null}
+        <li className={styles.fact}>
+          <FaSailboat className={styles.icon} aria-hidden />
+          <span>{boat}</span>
+        </li>
+      </ul>
     </ImageCard>
   );
 };

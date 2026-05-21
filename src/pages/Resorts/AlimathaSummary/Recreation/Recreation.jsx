@@ -8,7 +8,16 @@ import three from "./three.webp";
 import four from "./four.webp";
 
 export const AlimathaRecreation = () => (
-  <GridPage title="Recreation">
+  <GridPage
+    title="Recreation"
+    eyebrow="Nakai Alimatha"
+    breadcrumbs={[
+      { label: "Home", to: "/" },
+      { label: "Resorts", to: "/resorts" },
+      { label: "Nakai Alimatha", to: "/resorts/nakai-alimatha" },
+      { label: "Recreation" },
+    ]}
+  >
     <img src={one} alt="scuba-diving" />
     <GridTextBox title="Scuba Diving">
       Alimathà is not only a tropical paradise for the sun, the beautiful beach

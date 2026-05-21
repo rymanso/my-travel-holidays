@@ -1,56 +1,227 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    padding: 5% 10%;
+.page {
+    background-color: var(--c-cream);
+    color: var(--c-ink);
+    overflow-x: hidden;
 }
 
-.resortName{
-    font-size: 42px;
+/* ============ HERO CAROUSEL ============ */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 78vh;
+    min-height: 520px;
+    overflow: hidden;
+    color: var(--c-paper);
+}
+
+.heroCarousel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    isolation: isolate;
+    z-index: 1;
+}
+
+.heroCarousel :global(.carousel .slide.selected) {
+    z-index: 1 !important;
+}
+
+.heroCarousel :global(.carousel-root),
+.heroCarousel :global(.carousel),
+.heroCarousel :global(.carousel .slider-wrapper),
+.heroCarousel :global(.carousel .slider-wrapper ul),
+.heroCarousel :global(.carousel .slider),
+.heroCarousel :global(.carousel .slide) {
+    height: 100% !important;
+}
+
+.heroCarousel :global(.carousel .slider-wrapper) {
+    border-radius: 0 !important;
+}
+
+.heroCarousel :global(.carousel .slide) {
+    background: var(--c-deep);
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slideImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: heroZoomSlow 9s var(--ease-in-out) both;
+}
+
+@keyframes heroZoomSlow {
+    from { transform: scale(1.08); }
+    to   { transform: scale(1.0); }
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 25, 35, 0.45) 0%,
+        rgba(10, 25, 35, 0.15) 40%,
+        rgba(10, 25, 35, 0.65) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+.heroContent {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 var(--s-6) var(--s-8);
+    max-width: var(--container);
+    margin: 0 auto;
+    animation: fadeUp 1s var(--ease-out) both;
+    animation-delay: 0.25s;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.crumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: var(--s-3);
+    font-family: var(--f-eyebrow);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.crumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.crumbLink {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color var(--t-fast) var(--ease-out);
+}
+.crumbLink:hover { color: var(--c-paper); }
+
+.crumbSep { opacity: 0.45; }
+
+.resortName {
+    font-family: var(--f-display);
+    font-size: clamp(40px, 7vw, 88px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--c-paper);
+    font-weight: 500;
+    max-width: 18ch;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
 }
 
 .slogan {
-    padding-left: 20px;
-    font-size: 22px;
+    margin-top: var(--s-3);
+    font-family: var(--f-display);
+    font-style: italic;
+    font-size: clamp(18px, 2.2vw, 26px);
+    color: var(--c-sand);
+    max-width: 44ch;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
 }
 
-.imgContainer{
-    margin: auto;
-    padding: 5vh 0;
+/* ============ ABOUT ============ */
+
+.about {
+    padding: var(--s-9) var(--s-6) var(--s-7);
+}
+
+.aboutInner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    max-width: 800px;
-    width: 70%;
-    width:auto;
-}
-
-.bigImg {
-    border-radius: 16px;
-    max-width: 100%;
-    max-height: 100%;
+    gap: var(--s-4);
 }
 
 .description {
-    font-size: 18px;
-    line-height: 1.6 
+    font-size: clamp(17px, 1.6vw, 21px);
+    line-height: 1.75;
+    color: var(--c-ink);
+    font-family: var(--f-display);
+    font-weight: 400;
 }
-.content {
+
+/* ============ EXPLORE ============ */
+
+.explore {
+    padding: var(--s-7) 0 var(--s-9);
+}
+
+.exploreInner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--s-6);
+}
+
+.exploreHead {
     display: flex;
-    padding: 40px;
-    gap: 40px;
-    justify-content: center;
+    flex-direction: column;
+    gap: var(--s-3);
+    margin-bottom: var(--s-7);
+    text-align: center;
     align-items: center;
 }
 
-.carouselWrapper {
-    width: 100%;
-    display: "flex";
-    align-items: center;
-    justify-content: center;
-    /* background-color: #303030; */
-    z-index: -3;
+.exploreTitle {
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.1;
 }
 
-.carouselWrapper * {
-    color: black;
+.exploreGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-5);
+}
+
+@media (max-width: 900px) {
+    .exploreGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        height: 72vh;
+        min-height: 460px;
+    }
+    .about {
+        padding: var(--s-7) var(--s-5) var(--s-6);
+    }
+    .exploreInner {
+        padding: 0 var(--s-5);
+    }
+    .exploreGrid {
+        grid-template-columns: 1fr;
+        gap: var(--s-5);
+    }
+    .heroContent {
+        padding: 0 var(--s-5) var(--s-6);
+    }
 }

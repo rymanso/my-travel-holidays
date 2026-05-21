@@ -7,7 +7,16 @@ import two from "./two.webp";
 import three from "./three.webp";
 
 export const AlimathaDining = () => (
-  <GridPage title="Restaurant, Bar & Romantic Dining">
+  <GridPage
+    title="Restaurant, Bar & Romantic Dining"
+    eyebrow="Nakai Alimatha"
+    breadcrumbs={[
+      { label: "Home", to: "/" },
+      { label: "Resorts", to: "/resorts" },
+      { label: "Nakai Alimatha", to: "/resorts/nakai-alimatha" },
+      { label: "Dining" },
+    ]}
+  >
     <GridTextBox title="Restaurant">
       Savor the Italian style of our restaurant. You can choose between the
       all-inclusive formula and a la carte, experiencing a journey of flavors

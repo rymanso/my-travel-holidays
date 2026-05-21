@@ -28,8 +28,10 @@ const imageIds = [
   "1jkhDtxqRt2pRjDaIHixK0v9wNXjfOZSH",
 ];
 
+const MAX_SLIDES = 14;
+
 export const getSlideImages = (width) =>
-  imageIds.map((id) => ({
+  imageIds.slice(0, MAX_SLIDES).map((id) => ({
     url: `https://drive.google.com/thumbnail?id=${id}&sz=w${width}`,
     caption: undefined,
   }));

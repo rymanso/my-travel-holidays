@@ -9,7 +9,16 @@ import four from "./four.webp";
 import five from "./five.webp";
 
 export const MaayaafushiDining = () => (
-  <GridPage title="Restaurant, Bar & Romantic Dining">
+  <GridPage
+    title="Restaurant, Bar & Romantic Dining"
+    eyebrow="Nakai Maayaafushi"
+    breadcrumbs={[
+      { label: "Home", to: "/" },
+      { label: "Resorts", to: "/resorts" },
+      { label: "Nakai Maayaafushi", to: "/resorts/nakai-maayaafushi" },
+      { label: "Dining" },
+    ]}
+  >
     <GridTextBox title="Restaurant">
       Discover all the flavors of Maayafushi. With the two formulas All
       Inclusive and A la càrte you can taste the full range of our Chef's menu.

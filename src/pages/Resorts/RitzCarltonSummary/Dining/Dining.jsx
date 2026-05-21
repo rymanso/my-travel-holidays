@@ -11,7 +11,16 @@ import six from "./six.jpg";
 import seven from "./seven.jpg";
 
 export const RitzCarltonDining = () => (
-  <GridPage title="Restaurants and Bars">
+  <GridPage
+    title="Restaurants and Bars"
+    eyebrow="The Ritz-Carlton, Fari Islands"
+    breadcrumbs={[
+      { label: "Home", to: "/" },
+      { label: "Resorts", to: "/resorts" },
+      { label: "The Ritz-Carlton", to: "/resorts/ritz-carlton" },
+      { label: "Dining" },
+    ]}
+  >
     <GridTextBox title="La Locanda">
       The spirit of Southern Italy comes alive at La Locanda. Here, morning is
       signaled by the aroma of rich espresso, Aperitivo hour arrives with the

@@ -1,77 +1,60 @@
-# TLDR
+# MY Travels & Holidays
 
-Very standard CRA app, to be honest the auto-generated readme below is pretty bang-on on how to set up.
+A boutique brochure site for bespoke Maldivian escapes — hand-picked resorts and
+guest houses, presented as a cinematic single-page-app.
 
-App preview is being deployed to aws amplify at:
-https://dev9690.dm7hanrwrosk1.amplifyapp.com/
+[Live preview](https://dev9690.dm7hanrwrosk1.amplifyapp.com/) (AWS Amplify)
 
-# Getting Started with Create React App
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What's in here
 
-## Available Scripts
+- **React 18 SPA** bootstrapped with Create React App, routed with `react-router-dom`.
+- **Design system** in `src/index.css` — typography, palette (deep ocean teal,
+  warm sand, cream), spacing scale, motion tokens. Cormorant Garamond paired
+  with Inter.
+- **Pages**
+  - `Home` — full-bleed cinematic hero, brand story, value props, featured
+    resorts, contact section, footer.
+  - `Resorts` / `GuestHouses` — branded page hero with breadcrumbs +
+    responsive card grid.
+  - `ResortSummary` — cinematic fade carousel with overlaid resort name and
+    slogan, "About" block, three-up "Explore" cards (accomodation, dining,
+    recreation).
+  - `GridPage` — zig-zag image / text grid used for accomodation, dining and
+    recreation detail pages.
+- **Reusable components** under `src/components/` — `Header` (scroll-aware,
+  transparent over heroes), `Footer`, `PageHero`, `ImageCard`, `ResortCard`,
+  `ContactForm`.
 
-In the project directory, you can run:
+## Getting started
 
-### `npm start`
+```bash
+nvm use         # picks up the version pinned in .nvmrc
+npm install
+npm start       # dev server at http://localhost:3000
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Scripts
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Command         | What it does                                    |
+| --------------- | ----------------------------------------------- |
+| `npm start`     | Run the dev server with hot reload.             |
+| `npm run build` | Produce a minified production build in `build/`.|
+| `npm test`      | Run the Jest test runner.                       |
 
-### `npm test`
+## Conventions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **CSS Modules** per component (`Component.module.css`). One global
+  stylesheet — `src/index.css` — holds the design tokens, base typography and
+  a few overrides for `react-responsive-carousel`.
+- **Imagery** — hero / card images are colocated with the components that use
+  them. Resort carousel slides are sourced from public Google Drive thumbnails
+  via `imgUrls.js` (capped per resort to keep request volume polite).
+- **Contact form** uses `emailjs` directly from the browser; the public
+  template ID is in source intentionally.
 
-### `npm run build`
+## Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`React 18` · `react-router-dom 6` · `react-icons` · `react-responsive-carousel` ·
+`react-hook-form` · `@emailjs/browser`.

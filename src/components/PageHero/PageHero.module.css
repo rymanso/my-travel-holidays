@@ -1,0 +1,125 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 58vh;
+    min-height: 420px;
+    overflow: hidden;
+    color: var(--c-paper);
+    display: flex;
+    align-items: flex-end;
+}
+
+.heroImg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 45%;
+    animation: heroZoom 14s var(--ease-in-out) both;
+}
+
+@keyframes heroZoom {
+    from { transform: scale(1.06); }
+    to   { transform: scale(1.0); }
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 25, 35, 0.35) 0%,
+        rgba(10, 25, 35, 0.15) 40%,
+        rgba(10, 25, 35, 0.55) 100%
+    );
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    max-width: var(--container);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--s-6) var(--s-8);
+    animation: fadeUp 0.9s var(--ease-out) both;
+    animation-delay: 0.15s;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.crumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: var(--s-3);
+    color: rgba(255, 255, 255, 0.85);
+    font-family: var(--f-eyebrow);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.crumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.crumbLink {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color var(--t-fast) var(--ease-out);
+}
+
+.crumbLink:hover {
+    color: var(--c-paper);
+}
+
+.crumbSep {
+    opacity: 0.45;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-family: var(--f-eyebrow);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--c-sand);
+    margin-bottom: var(--s-3);
+}
+
+.title {
+    font-family: var(--f-display);
+    font-size: clamp(40px, 7vw, 88px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    color: var(--c-paper);
+    max-width: 18ch;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.2);
+}
+
+.lede {
+    margin-top: var(--s-4);
+    max-width: 56ch;
+    font-size: clamp(15px, 1.4vw, 18px);
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.65;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 720px) {
+    .hero {
+        height: 56vh;
+        min-height: 380px;
+    }
+    .heroContent {
+        padding: 0 var(--s-5) var(--s-6);
+    }
+}

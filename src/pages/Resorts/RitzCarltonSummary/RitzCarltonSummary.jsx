@@ -8,75 +8,58 @@ import { getSlideImages } from "./imgUrls";
 import { isMobile } from "react-device-detect";
 
 export const RitzCarltonSummary = () => {
-  const cardDescriptionStyle = {
-    padding: "10px",
-    fontSize: "14px",
-    fontFamily: "Bacasime Antique",
-  };
   return (
     <>
-      <Header />
+      <Header transparent />
       <ResortSummary
         resortName="The Ritz-Carlton"
-        slogan="Maldives, Fari Islands"
+        slogan="Maldives, Fari Islands."
         slideImages={getSlideImages(isMobile ? "400" : "800")}
-        description="The Ritz-Carlton Maldives, Fari Islands welcomes you to
-        embrace island life as sounds of the boduberu drum beat
-        against a breath-taking Maldivian sunset as the island transitions
-        from a day filled with memorable moments into an evening of
-        serenity and reflection.
+        breadcrumbs={[
+          { label: "Home", to: "/" },
+          { label: "Resorts", to: "/resorts" },
+          { label: "The Ritz-Carlton" },
+        ]}
+        description="The Ritz-Carlton Maldives, Fari Islands welcomes you to embrace island life as sounds of the boduberu drum beat against a breath-taking Maldivian sunset.
         <br/><br/>
-        Designing The Ritz-Carlton Maldives, Fari Islands encompassed more than architecture, art and décor; above all, it was
-        created with respect for the area’s fragile ecosystem. Before breaking ground on an existing sandbank, marine experts
-        extensively studied the oceanographic conditions to ensure minimal impact on the coral reef and spawning.
-        Construction materials were carefully sourced to favor prefabricated materials, which reduced the need for cutting and heavy
-        machinery, and PEFC-certified timber was brought from sustainable forests in Europe, allowing us to earn PEFC Project
-        Certification. The resort’s developers achieved EDGE certification in building the resort, which led to the Maldives’ first green
-        loan."
+        Designed with respect for the area's fragile ecosystem — and the first Maldivian project to earn PEFC certification — the resort was built largely from prefabricated materials, with timber sourced from sustainable European forests. Its developers achieved EDGE certification, which led to the Maldives' first green loan."
       >
         <ImageCard
           title="Accomodation"
+          eyebrow="Stays"
           src={accom}
-          linkTo={"/resorts/ritz-carlton/accomodation"}
+          linkTo="/resorts/ritz-carlton/accomodation"
         >
-          <div style={cardDescriptionStyle}>
-            Presenting 100 elegantly-designed villas by globally renowned Kerry
-            Hill Architects. <br />
-            <br />
-            The legendary Ritz-Carlton service is refined by a distinguished
-            Aris Meeha for each villa.
-          </div>
+          <p>
+            100 elegantly-designed villas by globally renowned Kerry Hill
+            Architects, each refined by a distinguished Aris Meeha — the
+            legendary Ritz-Carlton butler service.
+          </p>
         </ImageCard>
         <ImageCard
           title="Dining by Design"
+          eyebrow="Taste"
           src={dining}
-          linkTo={"/resorts/ritz-carlton/dining"}
+          linkTo="/resorts/ritz-carlton/dining"
         >
-          <ul style={{ lineHeight: 1.5, marginLeft: "-20px" }}>
+          <ul>
             <li>Cinema Under The Stars</li>
-            <li> Mystique Garden</li>
+            <li>Mystique Garden</li>
             <li>Grand Sunset Beach</li>
-          </ul>
-
-          <ul style={{ lineHeight: 1.5, marginLeft: "-20px" }}>
-            <li>Beach Cove</li>
-            <li>Sandbank</li>
+            <li>Beach Cove &amp; Sandbank</li>
           </ul>
         </ImageCard>
         <ImageCard
           title="Recreation"
+          eyebrow="Activities"
           src={recre}
-          linkTo={"/resorts/ritz-carlton/recreation"}
+          linkTo="/resorts/ritz-carlton/recreation"
         >
-          <ul style={{ lineHeight: 1.5, marginLeft: "-20px" }}>
-            <li>Tennis Academy</li>
-            <li>Fitness Classes</li>
+          <ul>
+            <li>Tennis academy</li>
+            <li>Fitness classes &amp; yoga</li>
             <li>Watersports</li>
-          </ul>
-          <ul style={{ lineHeight: 1.5, marginLeft: "-20px" }}>
-            <li>Spa</li>
-            <li>Yoga</li>
-            <li>Snorkelling and Diving</li>
+            <li>Spa, snorkelling &amp; diving</li>
           </ul>
         </ImageCard>
       </ResortSummary>

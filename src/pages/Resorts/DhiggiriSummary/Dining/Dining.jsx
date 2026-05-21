@@ -7,7 +7,16 @@ import two from "./two.webp";
 import three from "./three.webp";
 
 export const DhiggiriDining = () => (
-  <GridPage title="Restaurant, Bar & Romantic Dining">
+  <GridPage
+    title="Restaurant, Bar & Romantic Dining"
+    eyebrow="Nakai Dhiggiri"
+    breadcrumbs={[
+      { label: "Home", to: "/" },
+      { label: "Resorts", to: "/resorts" },
+      { label: "Nakai Dhiggiri", to: "/resorts/nakai-dhiggiri" },
+      { label: "Dining" },
+    ]}
+  >
     <GridTextBox title="Over Water Restaurant">
       Stare at the sea and face the horizon. Our Over Water Restaurant creates
       out of the meals a poetry of sounds, colors and taste.

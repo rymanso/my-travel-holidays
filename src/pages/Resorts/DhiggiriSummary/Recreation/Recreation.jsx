@@ -7,7 +7,16 @@ import three from "./three.webp";
 import jetski from "../jetski.jpeg";
 
 export const DhiggiriRecreation = () => (
-  <GridPage title="Recreation">
+  <GridPage
+    title="Recreation"
+    eyebrow="Nakai Dhiggiri"
+    breadcrumbs={[
+      { label: "Home", to: "/" },
+      { label: "Resorts", to: "/resorts" },
+      { label: "Nakai Dhiggiri", to: "/resorts/nakai-dhiggiri" },
+      { label: "Recreation" },
+    ]}
+  >
     <img src={jetski} alt="scuba-diving" />
     <GridTextBox title="Scuba Diving & Water Sports">
       Completely restored in 2016, DhiggiriResort has reborn with a new look
