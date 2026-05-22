@@ -12,7 +12,16 @@ import two_bedroom_sunset_beach_pool_villa from "./two_bedroom_sunset_beach_pool
 import the_ritz_carlton_estate from "./the_ritz_carlton_estate.jpg";
 
 export const RitzCarltonAccomodation = () => (
-  <GridPage title="Accomodation">
+  <GridPage
+    title="Accomodation"
+    eyebrow="The Ritz-Carlton, Fari Islands"
+    breadcrumbs={[
+      { label: "Home", to: "/" },
+      { label: "Resorts", to: "/resorts" },
+      { label: "The Ritz-Carlton", to: "/resorts/ritz-carlton" },
+      { label: "Accomodation" },
+    ]}
+  >
     <img src={ocean_pool_villa} alt="ocean-pool-villa" />
     <GridTextBox title="Ocean Pool Villa">
     Nestled overwater looking out unto an endless horizon of

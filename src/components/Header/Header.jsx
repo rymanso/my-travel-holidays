@@ -1,54 +1,142 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 import logo from "./logo.webp";
-import { isMobile } from "react-device-detect";
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export const Header = () => {
+const NAV_LINKS = [
+  { label: "Resorts", to: "/resorts" },
+  // { label: "Guest Houses", to: "/guest-houses" },
+  { label: "Contact", to: "/#contact" },
+];
+
+export const Header = ({ transparent = false }) => {
   const navigate = useNavigate();
-  const [expandedSidebar, setExpandedSidebar] = useState(false);
+  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    setDrawerOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = drawerOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [drawerOpen]);
+
+  const isLight = transparent && !scrolled;
+  const headerClass = [
+    styles.header,
+    isLight ? styles.headerLight : styles.headerSolid,
+    transparent ? styles.headerOverlay : "",
+  ].join(" ");
+
+  const handleContact = (e) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/#contact");
+    }
+  };
+
   return (
     <>
-      <div className={styles.banner}>
-        <img
-          src={logo}
-          className={styles.logo}
-          alt="Logo"
-          onClick={() => navigate("/")}
-        />
+      <header className={headerClass}>
+        <div className={styles.inner}>
+          <button
+            type="button"
+            className={styles.brand}
+            onClick={() => navigate("/")}
+            aria-label="MY Travels &amp; Holidays — home"
+          >
+            <img src={logo} className={styles.logo} alt="" />
+            <span className={styles.brandText}>
+              <span className={styles.brandTitle}>MY Travels</span>
+              <span className={styles.brandTagline}>&amp; Holidays</span>
+            </span>
+          </button>
 
-        <div className={styles.nav}>
-          {isMobile ? (
-            <RxHamburgerMenu onClick={() => setExpandedSidebar(true)} />
-          ) : (
-            <>
-              <span>
-                <a href="/resorts">Resorts</a>
-              </span>
-              <span>
-                {/* <a href="/guest-houses">Guest Houses</a> */}
-              </span>
-              {/* <span>Services</span> */}
-              <span>
-                <a href="/">Contact Us</a>
-              </span>
-            </>
-          )}
+          <nav className={styles.nav} aria-label="Primary">
+            {NAV_LINKS.map((link) =>
+              link.to.startsWith("/#") ? (
+                <a
+                  key={link.label}
+                  href={link.to}
+                  className={styles.navLink}
+                  onClick={handleContact}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link key={link.label} to={link.to} className={styles.navLink}>
+                  {link.label}
+                </Link>
+              )
+            )}
+          </nav>
+
+          <button
+            type="button"
+            className={styles.menuButton}
+            onClick={() => setDrawerOpen(true)}
+            aria-label="Open menu"
+          >
+            <RxHamburgerMenu />
+          </button>
         </div>
-      </div>
+      </header>
+
       <div
-        className={`${styles.sidebar} ${
-          expandedSidebar ? styles.sidebarExpanded : ""
-        }`}
+        className={`${styles.drawerScrim} ${drawerOpen ? styles.drawerScrimOpen : ""}`}
+        onClick={() => setDrawerOpen(false)}
+        aria-hidden="true"
+      />
+      <aside
+        className={`${styles.drawer} ${drawerOpen ? styles.drawerOpen : ""}`}
+        aria-hidden={!drawerOpen}
       >
-        <div className={styles.closeSidebar}>
-          <RxCross1 onClick={() => setExpandedSidebar(false)} />
+        <div className={styles.drawerHead}>
+          <span className={styles.drawerEyebrow}>Menu</span>
+          <button
+            type="button"
+            className={styles.drawerClose}
+            onClick={() => setDrawerOpen(false)}
+            aria-label="Close menu"
+          >
+            <RxCross1 />
+          </button>
         </div>
-        <a href="/resorts">Resorts</a>
-        {/* <a href="/guest-houses">Guest Houses</a> */}
-        <a href="/">Contact Us</a>
-      </div>
+        <nav className={styles.drawerNav}>
+          {NAV_LINKS.map((link) =>
+            link.to.startsWith("/#") ? (
+              <a
+                key={link.label}
+                href={link.to}
+                className={styles.drawerLink}
+                onClick={handleContact}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link key={link.label} to={link.to} className={styles.drawerLink}>
+                {link.label}
+              </Link>
+            )
+          )}
+        </nav>
+        <div className={styles.drawerFoot}>
+          <span className={styles.drawerEyebrow}>Maldives, curated</span>
+        </div>
+      </aside>
     </>
   );
 };

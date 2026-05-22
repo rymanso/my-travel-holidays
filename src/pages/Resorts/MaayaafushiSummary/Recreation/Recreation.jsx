@@ -7,7 +7,16 @@ import two from "./two.webp";
 import three from "./three.webp";
 
 export const MaayaafushiRecreation = () => (
-  <GridPage title="Recreation">
+  <GridPage
+    title="Recreation"
+    eyebrow="Nakai Maayaafushi"
+    breadcrumbs={[
+      { label: "Home", to: "/" },
+      { label: "Resorts", to: "/resorts" },
+      { label: "Nakai Maayaafushi", to: "/resorts/nakai-maayaafushi" },
+      { label: "Recreation" },
+    ]}
+  >
     <img src={one} alt="scuba-diving" />
     <GridTextBox title="Scuba Diving & Water Sports">
       The sea depths that can be visited are numerous and their diversity offers

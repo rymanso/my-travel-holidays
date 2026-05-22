@@ -10,7 +10,16 @@ import five from "./five.jpg";
 import six from "./six.jpg";
 
 export const RitzCarltonRecreation = () => (
-  <GridPage title="Recreation">
+  <GridPage
+    title="Recreation"
+    eyebrow="The Ritz-Carlton, Fari Islands"
+    breadcrumbs={[
+      { label: "Home", to: "/" },
+      { label: "Resorts", to: "/resorts" },
+      { label: "The Ritz-Carlton", to: "/resorts/ritz-carlton" },
+      { label: "Recreation" },
+    ]}
+  >
     <img src={one} alt="tennis" />
     <GridTextBox title="Tennis Academy">
       Enjoy a game on our synthetic foored lit tennis court. If you are in need

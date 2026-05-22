@@ -10,56 +10,56 @@ import { isMobile } from "react-device-detect";
 export const AlimathaSummary = () => {
   return (
     <>
-      <Header />
+      <Header transparent />
       <ResortSummary
         resortName="Nakai Alimatha"
-        slogan="Barefoot in Paradise"
+        slogan="Barefoot in paradise."
         slideImages={getSlideImages(isMobile ? "400" : "800")}
-        description="Located in the Vaavu Atoll, one of the most pristine sites in the Maldives. Alimathà embodies the soul of the NAKAI group. Recently renovated, it is now more beautiful and greener than ever. Brand new for 2021 are a 550 square meter swimming pool and the installation of the Maldives' first Padel Tennis court."
+        breadcrumbs={[
+          { label: "Home", to: "/" },
+          { label: "Resorts", to: "/resorts" },
+          { label: "Nakai Alimatha" },
+        ]}
+        description="Located in the Vaavu Atoll, one of the most pristine sites in the Maldives, Alimathà embodies the soul of the NAKAI group. Recently renovated, it is more beautiful and greener than ever. Brand new for 2021 are a 550-square-metre swimming pool and the installation of the Maldives' first padel tennis court."
       >
         <ImageCard
           title="Accomodation"
+          eyebrow="Stays"
           src={accom}
           linkTo="/resorts/nakai-alimatha/accomodation"
         >
-          <ul style={{ lineHeight: 1.5 }}>
-            <li>34 Over water bungalows</li>
-            <li>98 Beach bungalows</li>
-            <li>29 Garden bungalows</li>
-            <li>12 Garden rooms</li>
+          <ul>
+            <li>34 over-water bungalows</li>
+            <li>98 beach bungalows</li>
+            <li>29 garden bungalows</li>
+            <li>12 garden rooms</li>
           </ul>
         </ImageCard>
         <ImageCard
-          title="Dining & Bar"
+          title="Dining &amp; Bar"
+          eyebrow="Taste"
           src={dining}
-          linkTo={"/resorts/nakai-alimatha/dining"}
+          linkTo="/resorts/nakai-alimatha/dining"
         >
-          <ul style={{ lineHeight: 1.5 }}>
-            <li>Main Restaurant</li>
-            <li>Romantic Dinner</li>
-            <li>Barabaru Cafe' </li>
-            <li>Main Bar</li>
-            <li>Sunset Bar</li>
+          <ul>
+            <li>Main restaurant</li>
+            <li>Romantic dinner</li>
+            <li>Barabaru café</li>
+            <li>Main bar</li>
+            <li>Sunset bar</li>
           </ul>
         </ImageCard>
         <ImageCard
           title="Recreation"
+          eyebrow="Activities"
           src={tennis}
-          linkTo={"/resorts/nakai-alimatha/recreation"}
+          linkTo="/resorts/nakai-alimatha/recreation"
         >
-          <ul style={{ lineHeight: 1.5 }}>
-            <li>Water Sports</li>
-            <li>Scuba Diving</li>
-            <li>Beach Volley </li>
-            <li>Aqua Gym</li>
-            <li>Tennis</li>
-          </ul>
-          <ul style={{ lineHeight: 1.5 }}>
-            <li>Gym</li>
-            <li>Football</li>
-            <li>Bocce </li>
-            <li>Ping-Pong</li>
-            <li>Padel Tennis</li>
+          <ul>
+            <li>Water sports &amp; scuba diving</li>
+            <li>Beach volley &amp; aqua gym</li>
+            <li>Tennis &amp; padel tennis</li>
+            <li>Football, gym &amp; bocce</li>
           </ul>
         </ImageCard>
       </ResortSummary>

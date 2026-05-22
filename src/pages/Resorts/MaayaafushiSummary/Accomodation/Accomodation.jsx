@@ -7,7 +7,16 @@ import two from "./two.webp";
 import three from "./three.webp";
 
 export const MaayaafushiAccomodation = () => (
-  <GridPage title="Accomodation">
+  <GridPage
+    title="Accomodation"
+    eyebrow="Nakai Maayaafushi"
+    breadcrumbs={[
+      { label: "Home", to: "/" },
+      { label: "Resorts", to: "/resorts" },
+      { label: "Nakai Maayaafushi", to: "/resorts/nakai-maayaafushi" },
+      { label: "Accomodation" },
+    ]}
+  >
     <img src={one} alt="over-water-suite" />
     <GridTextBox title="Over Water">
       Peer out over infinity from your private balcony during the day, and be
